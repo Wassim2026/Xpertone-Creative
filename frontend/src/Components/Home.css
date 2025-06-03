@@ -1,0 +1,517 @@
+/* Global reset & background fix */
+html, body {
+  background-color: #081828 !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* Container padding reset (Bootstrap override) */
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Carousel image styling */
+.carousel-img {
+  height: 100vh; /* Full screen height */
+  width: 100vw;  /* Full screen width */
+  object-fit: cover;
+}
+
+/* Overlay on carousel */
+.carousel-overlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 30px;
+  max-width: 90%;
+  background-color: rgba(0, 0, 0, 0.5); /* Light black transparent bg */
+  border-radius: 10px;
+}
+
+.carousel-overlay h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.carousel-overlay p {
+  font-size: 1.25rem;
+  margin-top: 15px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Full width slider container */
+.slider-container {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 100vh;
+  top: -50px;
+  overflow: hidden;
+}
+
+/* Slider background */
+.home-background {
+  background-color: #0B1624;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Section heading hover effect */
+.hover-green {
+  transition: color 0.3s ease;
+}
+
+.hover-green:hover {
+  color: #00ff88;
+}
+
+/* Why Choose Section */
+.why-choose {
+  background-color: #081828;
+}
+
+/* Optional: smoother spacing */
+.hover-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Scrolling Feature Cards */
+.feature-scroll-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  background-color: #081828;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.feature-scroll {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;           /* Ensures all cards match height */
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  width: max-content;
+  background-color: #081828;
+  animation: scrollFeatures 25s linear infinite;
+}
+
+
+
+.feature-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollFeatures {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Individual Card Styling */
+.feature-card {
+  flex: 0 0 auto;
+  min-width: 250px;
+  max-width: 250px;
+  transition: color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #2e2e2e;
+}
+
+.feature-card:hover h5,
+.feature-card:hover p {
+  color: #00ff88;
+}
+.our-products-section {
+  background-color: #081828;
+  color: white;
+}
+.our-products-section :hover{
+   color: #00ff88;
+}
+.our-products-section h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.our-products-section p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.custom-product-card {
+  border: 2px solid #FFD700; /* Gold/Yellow border */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #112240;
+  transition: transform 0.3s ease;
+}
+
+.custom-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.2);
+}
+
+.product-image-wrapper {
+  height: 200px;
+}
+
+.product-image {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.price-box {
+  font-weight: bold;
+  background-color: rgba(0, 255, 136, 0.05);
+}
+
+.btn-success {
+  background-color: #00d86d;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #00c15d;
+}
+@keyframes vibrate {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Only vibrate the icon on button hover */
+.btn:hover .vibrate-icon {
+  animation: vibrate 0.3s linear infinite;
+}
+
+
+/* Horizontal scroll section */
+.horizontal-scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* Scrollbar styling for WebKit browsers (Chrome, Safari) */
+  scrollbar-color: red transparent; /* Firefox */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 4px;
+}
+
+/* Scroll row */
+.horizontal-scroll-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* Card inside scroll */
+.horizontal-scroll-row .scroll-card {
+  flex: 0 0 auto;
+  width: 250px;
+}
+.custom-service-card {
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #112240;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.card-image-placeholder {
+  height: 200px;
+  background-color: #1c1f2b;
+  color: #888;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+.get-in-touch-section {
+  background: #081828;
+}
+
+.contact-card {
+  background-color: #081828;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+.horizontal-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+  border-radius: 4px;
+}
+
+.custom-service-card {
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.custom-service-card:hover {
+  transform: scale(1.03);
+}
+
+
+
+.contact-form-section {
+  background: #0b1c2d;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.form-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #ddd;
+}
+
+.form-group label span {
+  color: red;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background-color: #162a3f;
+  color: #fff;
+  border: 1px solid #2f3e52;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00ff88;
+}
+
+.phone-input-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.country-code {
+  width: 130px;
+  background-color: #162a3f;
+  color: #fff;
+  border: 1px solid #2f3e52;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background: linear-gradient(to right, #00ff88, #00c66e);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 14px 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+.contact-form-section {
+  background-color: #0d1b2a;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+
+.form-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1b263b;
+  color: white;
+  border: 1px solid #415a77;
+  border-radius: 0.375rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #38b000;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #38b000;
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2d8d00;
+}
+
+.phone-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}

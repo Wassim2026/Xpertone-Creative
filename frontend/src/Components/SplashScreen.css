@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.splash-screen {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #ffc107;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out, fadeOut 1s ease-in-out 4s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-size: 400% 400%;
+  animation-name: fadeIn, fadeOut, glowBackground;
+  animation-duration: 1s, 1s, 5s;
+  animation-delay: 0s, 4s, 0s;
+  animation-fill-mode: forwards, forwards, forwards;
+  font-size: clamp(1.5rem, 8vw, 4.8rem); /* min 1.5rem, preferred 8vw, max 4.8rem */
+  text-shadow: 0 0 30px #ffc107, 0 0 60px #ffc107;
+  animation: pulse 2s infinite, floatUp 1.5s ease-out;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 1rem; /* Ensure spacing on small devices */
+
+}
+
+.splash-text {
+  font-size: 4.8rem;
+  text-shadow: 0 0 30px #ffc107, 0 0 60px #ffc107;
+  animation: pulse 2s infinite, floatUp 1.5s ease-out;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+    white-space: normal;
+  word-break: break-word;
+  flex-wrap: wrap;
+}
+
+/* Animate glowing background */
+@keyframes glowBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animate the text glowing and pulsing */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 30px #b83b41, 0 0 60px #ffc107;
+  }
+  50% {
+    transform: scale(1.15);
+    text-shadow: 0 0 40px #b83b41, 0 0 80px #ffd700;
+  }
+}
+
+/* Fade and scale in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Fade and scale out */
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(1.1); }
+}
+
+/* Smooth float-in effect for text */
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}

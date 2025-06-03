@@ -1,0 +1,66 @@
+/* Navbar.css */
+.navbar-custom {
+  background-color: #203458;
+  padding: 0.8rem 0;
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #00f0ff; /* Active link style */
+}
+
+
+.navbar-brand img {
+  height: 45px;
+}
+
+.navbar-nav {
+  gap: 20px;
+}
+.navbar-toggler {
+  border: none; /* optional */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 0;
+}
+
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00ffae;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+}
+
+.user-dropdown .dropdown-item {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+}
+
+.user-dropdown .dropdown-item:hover {
+  background-color: #4400f1;
+}
